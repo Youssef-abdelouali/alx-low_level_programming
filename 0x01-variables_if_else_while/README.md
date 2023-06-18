@@ -61,26 +61,27 @@ return (0);
 int main(void)
 {
 	int n;
+        int theLastDigit
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	
-    int The_last_digit = n % 10;
+        theLastDigit  = n % 10;
     
-	if (The_last_digit > 5)
+	if (theLastDigit > 5)
 	{
 		printf("The Last digit of %d is %d and is greater than 5\n",
 			n, The_last_digit);
 	}
-	else if ( The_last_digit < 6 && The_last_digit != 0)
+	else if ( theLastDigit < 6 && theLastDigit != 0)
 	{
 		printf("The Last digit of %d is %d and is less than 6 and not 0\n",
-			n, The_last_digit);
+			n, theLastDigit);
 	}
 	else
 	{
 		printf("The Last digit of %d is %d and is 0\n",
-			n, The_last_digit);
+			n, theLastDigit);
 	}
 
 	return (0);
