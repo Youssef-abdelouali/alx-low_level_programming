@@ -86,4 +86,32 @@ int main(void)
 
 	return (0);
 
-}```
+}
+```
+2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
+
+*a program that prints the alphabet in lowercase, followed by a new line :*
+
+```
+#include <stdio.h>
+
+/**
+ * the main function prints the alphabet in lowercase,
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	char  lowercase;
+
+	for ( lowercase = 'a';  lowercase <= 'z';  lowercase++)
+	{
+		putchar(lowercase);
+	}
+	putchar('\n');
+	return (0);
+}
+
+	
+
+```
+
