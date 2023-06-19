@@ -10,10 +10,8 @@ int main(void)
 	int j = 49;
 	int l;
 
-	do
-	{
-		do
-		{
+	do {
+		do {
 			l = j + 1;
 			while (l < 58)
 			{
@@ -31,12 +29,10 @@ int main(void)
 				l++;
 			}
 			j++;
-		}
-		while (j < 58);
+		} while (j < 58);
 		i++;
 		j = i + 1;
-	}
-	while (i < 58);
+	} while (i < 58);
 
 	putchar('\n');
 	return (0);
