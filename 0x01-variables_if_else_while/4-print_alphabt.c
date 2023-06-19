@@ -8,17 +8,17 @@
  */
 int main(void)
 {
-    char skip;
+	char skip;
 
-    for (skip = 'a'; skip <= 'z'; skip++)
-    {
-        if (skip != 'e' && skip != 'q')
-        {
-            putchar(skip);
-        }
-    }
+	for (skip = 'a'; skip <= 'z'; skip++)
+	{
+		if (skip != 'e' && skip != 'q')
+		{
+			putchar(skip);
+		}
+	}
 
-    putchar('\n');
+	putchar('\n');
 
-    return 0;
+	return (0);
 }
