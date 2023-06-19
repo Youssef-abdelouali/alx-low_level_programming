@@ -249,4 +249,38 @@ int main(void)
 }
 
 ```
+8. Hexadecimal
+
+*Write a program that prints all the numbers of base 16 in lowercase, followed by a new line:*
+
+```
+#include <stdio.h>
+
+/**
+ * main - prints all the numbers of base 16 in lowercase,
+ * followed by a new line
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int lower;
+	char hexa;
+
+	for (lower = 48; lower < 58; lower++)
+	{
+		putchar(lower);
+	}
+	for (hexa = 'a'; hexa <= 'f'; hexa++)
+	{
+		putchar(hexa);
+	}
+	putchar('\n');
+	return (0);
+}
+
+
+```
+
+
+
 
