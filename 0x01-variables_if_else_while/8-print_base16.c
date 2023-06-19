@@ -10,18 +10,19 @@
  */
 int main(void)
 {
-    int lower;
-    char hexa;
+	int lower;
+	char hexa;
 
-    for (lower = 48; lower < 58; lower++)
-    {
-        putchar(lower);
-    }
-    for (hexa = 'a'; hexa <= 'f'; hexa++)
-    {
-        putchar(hexa);
-    }
+	for (lower = 48; lower < 58; lower++)
+	{
+		putchar(lower);
+	}
 
-    putchar('\n');
-    return 0;
+	for (hexa = 'a'; hexa <= 'f'; hexa++)
+	{
+		putchar(hexa);
+	}
+
+	putchar('\n');
+	return (0);
 }
