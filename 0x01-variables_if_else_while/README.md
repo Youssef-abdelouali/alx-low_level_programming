@@ -135,3 +135,34 @@ int main(void)
 	return (0);
 }
 ```
+4. When I was having that alphabet soup, I never thought that it would pay off
+
+*a program that prints the alphabet in lowercase, followed by a new line Print all the letters except q and e
+ :*
+
+```
+#include <stdio.h>
+
+/**
+ * main - Prints the alphabet in lowercase,
+ * followed by a new line, except 'q' and 'e'.
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+    char skip;
+
+    for (skip = 'a'; skip <= 'z'; skip++)
+    {
+        if (skip != 'e' && skip != 'q')
+        {
+            putchar(skip);
+        }
+    }
+
+    putchar('\n');
+
+    return 0;
+}
+```
