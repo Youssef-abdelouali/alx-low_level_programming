@@ -11,20 +11,18 @@ int main(void)
 	do {
 		do {
 			l = j + 1;
-			do {
-				if (l > j && j > i)
-				{
+			while (l < 58) {
+				if (l > j && j > i) {
 					putchar(i);
 					putchar(j);
 					putchar(l);
-					if (i != 55 || j != 56)
-					{
+					if (i != 55 || j != 56 || l != 57) {
 						putchar(',');
 						putchar(' ');
 					}
 				}
 				l++;
-			} while (l < 58);
+			}
 			j++;
 		} while (j < 58);
 		i++;
