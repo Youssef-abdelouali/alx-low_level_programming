@@ -10,14 +10,13 @@
  */
 int main(void)
 {
-    char lowercase = 'z';
+	char lowercase = 'z';
 
-    do
-    {
-        putchar(lowercase);
-        lowercase--;
-    } while (lowercase >= 'a');
+	do {
+		putchar(lowercase);
+		lowercase--;
+	} while (lowercase >= 'a');
 
-    putchar('\n');
-    return 0;
+	putchar('\n');
+	return (0);
 }
