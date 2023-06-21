@@ -2,13 +2,13 @@
 #include <unistd.h>
 
 /**
- * A program that prints _putchar
- * followed by a new line.
- * 
- * The program should return 0.
+ * _putchar - writes the character c
+ *
+ * @c: The character to print
+ *
+ * Return: On success 1.
  */
-
 int _putchar(char c)
 {
-    return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
