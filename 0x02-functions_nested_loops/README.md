@@ -65,4 +65,35 @@ void print_alphabet(void)
 
 ```
 
+# 0x02. C - Functions, nested loops
+## Tasks :
+2. 10 x alphabet
+
+**Write a function that prints 10 times the alphabet, in lowercase, followed by a new line. :**
+
+```
+#include "main.h"
+
+/**
+ * print_alphabet_x10 - prints 10 times the alphabet, in lowercase, 
+ * use _putchar twice in your code
+ * followed by a new line
+ */
+void print_alphabet_x10(void)
+{
+    char alpha;
+    int i = 0;
+
+    do {
+        for (alpha = 'a'; ch <= 'z'; alpha++) {
+            _putchar(alpha);
+        }
+        _putchar('\n');
+        i++;
+    } while (i < 10);
+}
+
+
+```
+
 
