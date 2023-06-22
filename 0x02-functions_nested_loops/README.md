@@ -209,3 +209,34 @@ int _abs(int n)
 
 
 ```
+7. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important
+
+**Write a function that prints the last digit of a number  :**
+
+```
+#include "main.h"
+
+/**
+ * print_last_digit - Prints the last digit of a number
+ * @n: The number to extract the last digit from
+ *
+ * Return: The value of the last digit
+ */
+int print_last_digit(int n)
+{
+	int last_digit;
+
+	if (n < 0)
+		n = -n;
+
+	last_digit = n % 10;
+
+	if (last_digit < 0)
+		last_digit = -last_digit;
+
+	_putchar(last_digit + '0');
+
+	return (last_digit);
+}
+
+```
