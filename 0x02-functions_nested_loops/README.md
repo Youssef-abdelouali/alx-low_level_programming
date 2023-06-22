@@ -95,5 +95,78 @@ void print_alphabet_x10(void)
 
 
 ```
+3. islower
+
+**Write a function that checks for lowercase character :**
+
+```
+#include "main.h"
 
 
+	/**
+	 * Prototype: int _islower(int c);
+	 * @c: is the char to be checked
+	 * Returns 1 if c is lowercase
+     * Returns 0 otherwise
+	 */
+
+
+	int _islower(int c)
+	{
+		if (c >= 'a' && c <= 'z')
+			return (1);
+		else
+			return (0);
+	}
+
+
+
+```
+
+4. isalpha
+
+**Write a function that checks for alphabetic character  :**
+
+```
+
+#include "main.h"
+		
+
+		
+/**
+		
+ * Prototype: int _isalpha(int c);
+		
+ * Returns 1 if c is a letter, lowercase or uppercase
+		
+ * Returns 0 otherwise
+		
+ */
+		
+int main(void)
+		
+{
+		
+    int alpha;
+		
+
+		
+    alpha = _islower('H');
+		
+    _putchar(alpha + '0');
+		
+    alpha = _islower('o');
+		
+    _putchar(alpha + '0');
+		
+    alpha = _islower(108);
+		
+    _putchar(alpha + '0');
+		
+    _putchar('\n');
+		
+    return (0);
+		
+}
+
+```
