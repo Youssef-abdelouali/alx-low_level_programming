@@ -154,32 +154,31 @@ int _isalpha(int c)
 #include "main.h"
 
 /**
- * print_sign - Prints the sign of a number
- * @n: The integer to check
+ * Prototype: int print_sign(int n);
+ * @n: The number to check
  *
- * Return: 1 and prints '+' if n is greater than zero
- *         0 and prints '0' if n is zero
- *        -1 and prints '-' if n is less than zero
+ * 1 and prints '+' if n is greater than zero
+ *  0 and prints '0' if n is zero
+ * -1 and prints '-' if n is less than zero
  */
 int print_sign(int n)
 {
-	char sign;
-
-	switch (n)
+	if (n > 0)
 	{
-	case 0:
-		sign = '0';
-		break;
-	case 1:
-		sign = '+';
-		break;
-	default:
-		sign = '-';
-		break;
+		_putchar('+');
+		return (1);
 	}
-
-	_putchar(sign);
-	return (n >= 0 ? (n > 0 ? 1 : 0) : -1);
+	else if (n == 0)
+	{
+		_putchar('0');
+		return (0);
+	}
+	else
+	{
+		_putchar('-');
+		return (-1);
+	}
 }
+
 
 ```
