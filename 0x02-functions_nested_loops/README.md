@@ -122,51 +122,27 @@ void print_alphabet_x10(void)
 
 
 ```
-
 4. isalpha
 
 **Write a function that checks for alphabetic character  :**
 
 ```
-
 #include "main.h"
-		
 
-		
 /**
-		
+ * _isalpha - Checks for alphabetic character
  * Prototype: int _isalpha(int c);
-		
+ * c The character to be checked
+ *
  * Returns 1 if c is a letter, lowercase or uppercase
-		
- * Returns 0 otherwise
-		
  */
-		
-int main(void)
-		
+int _isalpha(int c)
 {
-		
-    int alpha;
-		
-
-		
-    alpha = _islower('H');
-		
-    _putchar(alpha + '0');
-		
-    alpha = _islower('o');
-		
-    _putchar(alpha + '0');
-		
-    alpha = _islower(108);
-		
-    _putchar(alpha + '0');
-		
-    _putchar('\n');
-		
-    return (0);
-		
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
+
+
+
+
 
 ```

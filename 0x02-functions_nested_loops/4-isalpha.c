@@ -2,10 +2,12 @@
 
 /**
  * _isalpha - Checks for alphabetic character
- * Prototype: int _isalpha(int c);
- * c The character to be checked
+ * @c: The character to be checked
  *
- * Returns 1 if c is a letter, lowercase or uppercase
+ * Return: 1 if c is a letter, 0 otherwise.
+ *
+ * Description: This function checks whether the given character 'c' is an
+ * alphabetic character, considering both lowercase and uppercase letters.
  */
 int _isalpha(int c)
 {
