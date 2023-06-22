@@ -182,3 +182,30 @@ int print_sign(int n)
 
 
 ```
+6. There is no such thing as absolute value in this world. You can only estimate what a thing is worth to you
+
+**Write a function that computes the absolute value of an integer.  :**
+
+```
+#include "main.h"
+
+/**
+ * _abs - Computes the absolute value of an integer
+ * @n: The integer to check
+ *
+ * Return: The absolute value of the integer
+ */
+int _abs(int n)
+{
+	if (n >= 0)
+	{
+		return (n);
+	}
+	return (-n);
+}
+
+
+
+
+
+```
