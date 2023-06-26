@@ -51,4 +51,55 @@ int _isdigit(int c)
     return 0;
 }
 ```
+2. Collaboration is multiplication :
+
+```
+#include "main.h"
+
+/**
+ * mul - Multiply two integers
+ * @a: First integer
+ * @b: Second integer
+ *
+ * Return: The product of the multiplication
+ */
+int mul(int a, int b)
+{
+	/* Multiply the two integers */
+	int result = a * b;
+
+	return (result);
+}
+
+ 
+```
+3. The numbers speak for themselves  :
+
+```
+#include "main.h"
+
+/**
+ * print_numbers - Prints numbers from 0 to 9
+ *
+ * Return: void
+ */
+void print_numbers(void)
+{
+	char c = '0';
+
+	do {
+		/* Print the current number */
+		_putchar(c);
+
+		/* Increment the number */
+		c++;
+	} while (c <= '9');
+
+	/* Print a new line */
+	_putchar('\n');
+}
+
+ 
+```
+
 
