@@ -341,4 +341,100 @@ char *_strcpy(char *dest, char *src)
 
 
 ```
+10. Great leaders are willing to sacrifice the numbers to save the people. Poor leaders sacrifice the people to save the numbers
+
+_Write a function that convert a string to an integer.._
+
+
+```sh
+#include "main.h"
+
+/**
+ * _atoi - Converts a string to an integer.
+ * @s: String to be converted.
+ *
+ * Return: The integer converted from the string.
+ */
+int _atoi(char *s)
+{
+	int index, sign, result, length, found, digit;
+
+	index = 0;
+	sign = 0;
+	result = 0;
+	length = 0;
+	found = 0;
+	digit = 0;
+
+	while (s[length] != '\0')
+		length++;
+
+	while (index < length && found == 0)
+	{
+		if (s[index] == '-')
+			sign++;
+
+		if (s[index] >= '0' && s[index] <= '9')
+		{
+			digit = s[index] - '0';
+			if (sign % 2)
+				digit = -digit;
+			result = result * 10 + digit;
+			found = 1;
+			if (s[index + 1] < '0' || s[index + 1] > '9')
+				break;
+			found = 0;
+		}
+		index++;
+	}
+
+	if (found == 0)
+		return (0);
+
+	return (result);
+}
+
+```
+11. Don't hate the hacker, hate the code
+
+_Create a program that generates random valid passwords for the program 101-crackme._
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+/**
+ * main - Generates random valid passwords for the program 101-crackme.
+ *
+ * Return: Always 0 (Success).
+ */
+int main(void)
+{
+	int password[100];
+	int index, sum, number;
+
+	sum = 0;
+	srand(time(NULL));
+
+	for (index = 0; index < 100; index++)
+	{
+		password[index] = rand() % 78;
+		sum += (password[index] + '0');
+		putchar(password[index] + '0');
+
+		if ((2772 - sum) - '0' < 78)
+		{
+			number = 2772 - sum - '0';
+			sum += number;
+			putchar(number + '0');
+			break;
+		}
+	}
+
+	return (0);
+}
+
+```
+
 
