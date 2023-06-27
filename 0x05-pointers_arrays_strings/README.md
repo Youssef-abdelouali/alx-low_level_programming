@@ -55,21 +55,24 @@ _Write a function that returns the length of a string._
 #include "main.h"
 
 /**
- * _strlen - Calculates string length.
- * @s: Pointer to the string.
+ * _strlen - Returns the length of a string.
+ * @s: The string to calculate the length of.
  *
- * Return: Length of the string.
+ * Return: The length of the string.
  */
 int _strlen(char *s)
 {
-	int length = 0; /* Variable for length */
+	int length = 0; /* Variable to store the length of the string */
 
-	do {
-		length++; /* Increment length */
-	} while (*s++ != '\0'); /* Iterate until null terminator is reached */
+	while (*s != '\0')
+	{
+		length++; /* Increment length for each character */
+		s++; /* Move to the next character */
+	}
 
-	return length; /* Return the length */
+	return (length);
 }
+
 
 
 
