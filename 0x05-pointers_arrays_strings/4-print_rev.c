@@ -2,29 +2,26 @@
 
 /**
  * print_rev - Prints a string in reverse.
- * @s: Pointer to the string.
- *
- * Description: This function calculates the length of the string,
- *              then prints the characters in reverse order.
- *              After printing the reversed string, it adds a new line.
+ * @s: The string to be printed in reverse.
  */
 void print_rev(char *s)
 {
-	int length = 0; /* Variable for length */
+	int length = 0; /* Variable to store the length of the string */
+	int i;
 
-	/* Calculate the length of the string */
-	do {
-		length++;
-	} while (*s++ != '\0');
-
-	s--; /* Move back to the last character */
-
-	/* Print the characters in reverse order */
-	while (length > 0)
+	while (*s != '\0')
 	{
-		_putchar(*s--);
-		length--;
+		length++; /* Increment length for each character */
+		s++; /* Move to the next character */
 	}
 
-	_putchar('\n'); /* Add a new line character */
+	s--; /* Move back to the last character before the null terminator */
+
+	for (i = length; i > 0; i--)
+	{
+		_putchar(*s);
+		s--;
+	}
+
+	_putchar('\n');
 }
