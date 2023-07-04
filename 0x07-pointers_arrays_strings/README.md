@@ -66,7 +66,8 @@ _Write a function that locates a character in a string.._
  * @s: Pointer to the string to be searched.
  * @c: Character to be located.
  *
- * Return: Pointer to the first occurrence of c in s, or NULL if not found.
+ * Return: 0 if the character is not found, otherwise a pointer to the first
+ *         occurrence of the character in the string.
  */
 char *_strchr(char *s, char c)
 {
@@ -80,7 +81,7 @@ char *_strchr(char *s, char c)
 		i++;
 	}
 
-	return (NULL);
+	return (0);
 }
 
 ```
