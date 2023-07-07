@@ -256,4 +256,26 @@ void print_diagsums(int *a, int size)
 	printf("%d, %d\n", diag_sum1, diag_sum2);
 }
 
+
 ```
+8. Double pointer, double fun
+
+_Write a function that sets the value of a pointer to a char._
+
+```sh
+#include "main.h"
+
+/**
+ * set_string - Sets the value of a pointer to a char.
+ * @s: Pointer to a pointer to be modified.
+ * @to: Pointer to char to set the pointer value to.
+ *
+ * Return: void
+ */
+void set_string(char **s, char *to)
+{
+	*s = to;
+}
+
+```
+
