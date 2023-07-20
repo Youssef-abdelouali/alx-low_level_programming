@@ -268,3 +268,73 @@ int (*get_op_func(char *s))(int, int);
 
 ```
 
+4. Most hackers are young because young people tend to be adaptable. As long as you remain adaptable, you can always be a good hacker
+
+
+_Write a program that prints the opcodes of its own main function._
+
+```sh
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - Prints its own opcodes.
+ * @argc: The number of arguments.
+ * @argv: An array of arguments.
+ *
+ * Return: Always 0 (Success).
+ */
+int main(int argc, char *argv[])
+{
+	int bytes, i;
+	char *arr;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
+
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	arr = (char *)main;
+
+	for (i = 0; i < bytes; i++)
+	{
+		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx ", arr[i]);
+	}
+	return (0);
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
