@@ -7,7 +7,6 @@
 _Write a function that prints a name._
 
 ```sh
-
 #include "function_pointers.h"
 #include <stdio.h>
 
@@ -20,14 +19,10 @@ _Write a function that prints a name._
  **/
 void print_name(char *name, void (*f)(char *))
 {
-    if (name == NULL || f == NULL)
-        return;
+	if (name == NULL || f == NULL)
+		return;
 
-    f(name);
+	f(name);
 }
 
-
 ```
-
-
-
