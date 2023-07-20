@@ -17,7 +17,8 @@ void print_all(const char * const format, ...)
 
 	if (format)
 	{
-		do {
+		while (format[i])
+		{
 			switch (format[i])
 			{
 				case 'c':
@@ -41,7 +42,7 @@ void print_all(const char * const format, ...)
 			}
 			sep = ", ";
 			i++;
-		} while (format[i]);
+		}
 	}
 
 	printf("\n");
