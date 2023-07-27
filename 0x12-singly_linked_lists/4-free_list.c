@@ -3,20 +3,17 @@
 
 /**
  * free_list - Frees a linked list.
- * @head: Pointer to the list_t list to be freed.
- *
- * Description: This function frees the memory
- * occupied by each node of the
- * linked list and the strings stored in each node.
+ * @head: The list_t list to be freed.
  */
 void free_list(list_t *head)
 {
 	list_t *temp;
 
-	do {
-		temp = head;
-		head = head->next;
-		free(temp->str);
-		free(temp);
-	} while (head);
+	while (head)
+	{
+		temp = head->next;
+		free(head->str);
+		free(head);
+		head = temp;
+	}
 }
