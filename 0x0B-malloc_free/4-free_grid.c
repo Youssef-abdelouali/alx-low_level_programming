@@ -4,18 +4,19 @@
 
 /**
  * free_grid - Frees a 2D array.
- * @grid: The 2D array to be freed.
- * @height: The height dimension of the grid.
+ * @grid: 2D grid to free.
+ * @height: Height dimension of the grid.
  *
- * Description: Frees the memory of the 2D array.
+ * Description: This function frees the memory occupied by a 2D grid.
+ * Return: Nothing.
  */
 void free_grid(int **grid, int height)
 {
-    int row;
+	int i;
 
-    for (row = 0; row < height; row++)
-    {
-        free(grid[row]);
-    }
-    free(grid);
+	for (i = 0; i < height; i++)
+	{
+		free(grid[i]);
+	}
+	free(grid);
 }
