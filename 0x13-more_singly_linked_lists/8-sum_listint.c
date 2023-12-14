@@ -8,14 +8,15 @@
  */
 int sum_listint(listint_t *head)
 {
-	int total_sum = 0;
-	listint_t *current_node = head;
+	int totalSum = 0;
+	listint_t *currentNode = head;
 
-	do {
-		total_sum += current_node->n;
-		current_node = current_node->next;
-	} while (current_node);
+	while (currentNode)
+	{
+		totalSum += currentNode->n;
+		currentNode = currentNode->next;
+	}
 
-	return (total_sum);
+	return (totalSum);
 }
 
