@@ -10,43 +10,38 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *head_1;
-	dlistint_t *head_2;
-	unsigned int i;
-
-	head_1 = *head;
-
-	if (head_1 != NULL)
-		while (head_1->prev != NULL)
-			head_1 = head_1->prev;
-
-	x = 0;
-
-	while (head_1 != NULL)
-	{
-		if (x == index)
-		{
-			if (x == 0)
-			{
-				*head = head_1->next;
-				if (*head != NULL)
-					(*head)->prev = NULL;
-			}
-			else
-			{
-				head_2->next = head_1->next;
-
-				if (head_1->next != NULL)
-					head_1->next->prev = head_2;
-			}
-
-			free(head_1);
-			return (1);
-		}
-		head_2 = head_1;
-		head_1 = head_1->next;
-		x++;
-	}
-
-	return (-1);
+dlistint_t *current_node;
+dlistint_t *previous_node;
+unsigned int position;
+current_node = *head;
+if (current_node != NULL)
+{
+while (current_node->prev != NULL)
+current_node = current_node->prev;
+}
+position = 0;
+while (current_node != NULL)
+{
+if (position == index)
+{
+if (position == 0)
+{
+*head = current_node->next;
+if (*head != NULL)
+(*head)->prev = NULL;
+}
+else
+{
+previous_node->next = current_node->next;
+if (current_node->next != NULL)
+current_node->next->prev = previous_node;
+}
+free(current_node);
+return (1);
+}
+previous_node = current_node;
+current_node = current_node->next;
+position++;
+}
+return (-1);
 }
