@@ -2,12 +2,12 @@
 
 /**
  * hash_table_set - Add or update an element in a hash table.
- * hash_table_set - Inserts or updates an element in a hash table.
  * @ht: A pointer to the hash table.
- * @key: The non-empty key to insert or update.
- * @value: The value associated with the key.
+ * @key: The key to add - cannot be an empty string.
+ * @value: The value associated with key.
  *
- * Returns: 0 on failure, 1 on success.
+ * Return: Upon failure - 0.
+ *         Otherwise - 1.
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
