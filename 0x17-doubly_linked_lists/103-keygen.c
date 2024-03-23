@@ -3,29 +3,29 @@
 #include <time.h>
 
 /**
- * find_largest_char - finds the biggest number
+ * get_largest_char - finds the biggest number
  *
- * @username: username
- * @length: length of username
+ * @usrn: username
+ * @len: length of username
  * Return: the biggest number
  */
-int find_largest_char(char *username, int length)
+int get_largest_char(char *usrn, int len)
 {
-	int largest;
-	int index;
+	int ch;
+	int idx;
 	unsigned int rand_num;
 
-	largest = *username;
-	index = 0;
+	ch = *usrn;
+	idx = 0;
 
-	while (index < length)
+	while (idx < len)
 	{
-		if (largest < username[index])
-			largest = username[index];
-		index += 1;
+		if (ch < usrn[idx])
+			ch = usrn[idx];
+		idx += 1;
 	}
 
-	srand(largest ^ 14);
+	srand(ch ^ 14);
 	rand_num = rand();
 
 	return (rand_num & 63);
@@ -34,47 +34,46 @@ int find_largest_char(char *username, int length)
 /**
  * multiply_chars - multiplies each char of username
  *
- * @username: username
- * @length: length of username
+ * @usrn: username
+ * @len: length of username
  * Return: multiplied char
  */
-int multiply_chars(char *username, int length)
+int multiply_chars(char *usrn, int len)
 {
-	int product;
-	int index;
+	int ch;
+	int idx;
 
-	product = 0;
-	index = 0;
+	ch = idx = 0;
 
-	while (index < length)
+	while (idx < len)
 	{
-		product = product + username[index] * username[index];
-		index += 1;
+		ch = ch + usrn[idx] * usrn[idx];
+		idx += 1;
 	}
 
-	return (((unsigned int)product ^ 239) & 63);
+	return (((unsigned int)ch ^ 239) & 63);
 }
 
 /**
  * generate_random_char - generates a random char
  *
- * @username: username
+ * @usrn: username
  * Return: a random char
  */
-int generate_random_char(char *username)
+int generate_random_char(char *usrn)
 {
-	int random_char;
-	int index;
+	int ch;
+	int idx;
 
-	random_char = index = 0;
+	ch = idx = 0;
 
-	while (index < *username)
+	while (idx < *usrn)
 	{
-		random_char = rand();
-		index += 1;
+		ch = rand();
+		idx += 1;
 	}
 
-	return (((unsigned int)random_char ^ 229) & 63);
+	return (((unsigned int)ch ^ 229) & 63);
 }
 
 /**
@@ -87,39 +86,42 @@ int generate_random_char(char *username)
 int main(int argc, char **argv)
 {
 	char keygen[7];
-	int length, index;
-	long alphabet[] = {
+	int len, ch, idx;
+	long alph[] = {
 		0x3877445248432d41, 0x42394530534e6c37, 0x4d6e706762695432,
 		0x74767a5835737956, 0x2b554c59634a474f, 0x71786636576a6d34,
 		0x723161513346655a, 0x6b756f494b646850 };
 	(void) argc;
 
-	for (length = 0; argv[1][length]; length++)
+	for (len = 0; argv[1][len]; len++)
 		;
 	/* ----------- f1 ----------- */
-	keygen[0] = ((char *)alphabet)[(length ^ 59) & 63];
+	keygen[0] = ((char *)alph)[(len ^ 59) & 63];
 	/* ----------- f2 ----------- */
-	index = 0;
-	while (index < length)
+	ch = idx = 0;
+	while (idx < len)
 	{
-		keygen[1] = ((char *)alphabet)[(keygen[1] + argv[1][index]) ^ 79 & 63];
-		index += 1;
+		ch = ch + argv[1][idx];
+		idx = idx + 1;
 	}
+	keygen[1] = ((char *)alph)[(ch ^ 79) & 63];
 	/* ----------- f3 ----------- */
-	index = 0;
-	while (index < length)
+	ch = 1;
+	idx = 0;
+	while (idx < len)
 	{
-		keygen[2] = ((char *)alphabet)[(keygen[2] * argv[1][index]) ^ 85 & 63];
-		index += 1;
+		ch = argv[1][idx] * ch;
+		idx = idx + 1;
 	}
+	keygen[2] = ((char *)alph)[(ch ^ 85) & 63];
 	/* ----------- f4 ----------- */
-	keygen[3] = ((char *)alphabet)[find_largest_char(argv[1], length)];
+	keygen[3] = ((char *)alph)[get_largest_char(argv[1], len)];
 	/* ----------- f5 ----------- */
-	keygen[4] = ((char *)alphabet)[multiply_chars(argv[1], length)];
+	keygen[4] = ((char *)alph)[multiply_chars(argv[1], len)];
 	/* ----------- f6 ----------- */
-	keygen[5] = ((char *)alphabet)[generate_random_char(argv[1])];
+	keygen[5] = ((char *)alph)[generate_random_char(argv[1])];
 	keygen[6] = '\0';
-	for (index = 0; keygen[index]; index++)
-		printf("%c", keygen[index]);
+	for (ch = 0; keygen[ch]; ch++)
+		printf("%c", keygen[ch]);
 	return (0);
 }
